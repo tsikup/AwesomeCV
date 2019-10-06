@@ -1,6 +1,10 @@
 AwesomeCV
 =========
 
+My CV based on [@b3by](https://github.com/b3by/AwesomeCV)'s AwesomeCV.
+
+- - - -
+
 [![forthebadge](http://forthebadge.com/images/badges/built-with-swag.svg)](http://forthebadge.com)
 
 This is a simple latex class for CVs. It is heavily inspired by moderncv class
