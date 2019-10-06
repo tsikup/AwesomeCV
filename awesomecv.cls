@@ -4,6 +4,9 @@
 \ProvidesClass{awesomecv}[2014/02/22 Awesome CV class]
 
 \RequirePackage{fontawesome}
+\RequirePackage[hidelinks]{hyperref}
+\RequirePackage{enumitem}
+\RequirePackage{fontenc}
 \RequirePackage{setspace}
 \RequirePackage{tcolorbox}
 \RequirePackage{amsmath}
@@ -15,6 +18,13 @@
 
 \RequirePackage{enumitem}
 \setlist{nolistsep}
+
+\hypersetup{
+    colorlinks=false,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
 
 \definecolor{base03}{HTML}{002B36}
 \definecolor{base02}{HTML}{073642}
@@ -34,9 +44,7 @@
 \definecolor{green}{HTML}{859900}
 \setlength{\footskip}{70pt}
 
-\setmainfont[FeatureFile=times-nr.fea]{Avenir Next}
-
-\newfontfamily\FA[Path=fonts/]{FontAwesome}
+\setmainfont{Fira Sans}
 
 \providecommand\faSkype{{\FA\symbol{"F17E}}}
 \providecommand\faFlask{{\FA\symbol{"F0C3}}}
