@@ -44,7 +44,13 @@
 \definecolor{green}{HTML}{859900}
 \setlength{\footskip}{70pt}
 
-\setmainfont{Fira Sans}
+% \setmainfont{Roboto-Light}
+
+\setmainfont[
+ BoldFont={Roboto-Bold},
+ ItalicFont={Roboto-Italic},
+ BoldItalicFont={Roboto-Bold-Italic}
+ ]{Roboto-Light}
 
 \providecommand\faSkype{{\FA\symbol{"F17E}}}
 \providecommand\faFlask{{\FA\symbol{"F0C3}}}
