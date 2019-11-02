@@ -19,7 +19,23 @@
 
 \maketitle
 
-\section{ECE Thesis}
+\section{Projects in CBML FORTH}
+
+\subsection{H2020 funded project InSilc}
+\paragraph{}
+During the months that I have been working in CBML, ICS FORTH I have been involved in the H2020 InSilc project (\url{https://insilc.eu/}) in which my main responsibilities relate to the implement and testing of a number of algorithmic approaches for the registration of IVUS images before and after stent procedure.
+
+IVUS image sequences suffer from various artifacts that are caused by the cardiac pulse, which can complicate their analysis. One major artifact is that he longitudinal movement of the transducer is affected by an oscillatory movement due to the heart beats \cite{alberti2012automatic}. Moreover, because the catheter is withdrawn through the blood vessel, its position with respect to the vessel is not fixed but freely to move inside it. As a result, the acquired image sections might not be orthogonal to the vessel walls \cite{gatta2008robust} as well as subsequent frames might be misaligned \cite{alberti2012automatic}. To address these problems, we apply a gating technique in order to sample the frames which correspond to the end-diastolic phase of the heart cycle, then we apply a DTW based method in order to temporally align the each IVUS pair sequences. Finally, we apply rigid registration between each image pair of the temporally registered sequences. This work is still in progress and we plan to publish it in an International Conference or Journal in the next few months.
+
+
+\subsection{H2020 funded project SeeFar}
+\paragraph{}
+In the upcoming months I will also be working on the SeeFar project (\url{https://www.see-far.eu/}) on the development and evaluation of methods for the detection and the progression of retina diseases (diabetic retinopathy and  age-related macular degeneration), as well as diseases that are not related with the eyes health, but signs of the diseases can be detected by the analysis of retina images (e.g. cardiovascular risk). Both traditional (featured based) machine learning approaches as well as deep learning methods will be explored and evaluated  with respect to accuracy, sensitivity and specificity in diagnosis and prediction.
+
+\section{Projects in University of Patras}
+
+\subsection{ECE Thesis}
+\paragraph{}
 This thesis was conducted in the Digital Signal and Image Processing Laboratory of the Electrical and Computer Engineering Department, University of Patras under the supervision of Prof. Athanassios Skodras in collaboration with the Vrije Universiteit Brussel (VUB) and the Royal Meteorological Institute of Brussels (KMI). \vspace{4pt}
 
 Its central objective was the application of advanced stereo vision techniques for the estimation of cloud height based on images from the MSG-3 and MSG-1 satellites. \vspace{4pt}
@@ -35,19 +51,8 @@ In the context of the thesis I have specifically focused on the following:
     \item  Review and application of Graph Cut algorithms based on the Markov Random Fields theory to extract the disparity map.
 \end{enumerate}
 
-\section{H2020 funded project InSilc}
-
-During the months that I have been working in CBML, ICS FORTH I have been involved in the H2020 InSilc project (\url{https://insilc.eu/}) in which my main responsibilities relate to the implement and testing of a number of algorithmic approaches for the registration of IVUS images before and after stent procedure.
-
-IVUS image sequences suffer from various artifacts that are caused by the cardiac pulse, which can complicate their analysis. One major artifact is that he longitudinal movement of the transducer is affected by an oscillatory movement due to the heart beats \cite{alberti2012automatic}. Moreover, because the catheter is withdrawn through the blood vessel, its position with respect to the vessel is not fixed but freely to move inside it. As a result, the acquired image sections might not be orthogonal to the vessel walls \cite{gatta2008robust} as well as subsequent frames might be misaligned \cite{alberti2012automatic}. To address these problems, we apply a gating technique in order to sample the frames which correspond to the end-diastolic phase of the heart cycle, then we apply a DTW based method in order to temporally align the each IVUS pair sequences. Finally, we apply rigid registration between each image pair of the temporally registered sequences. This work is still in progress and we plan to publish it in an International Conference or Journal in the next few months.
-
-
-\section{H2020 funded project SeeFar}
-
-In the upcoming months I will also be working on the SeeFar project (\url{https://www.see-far.eu/}) on the development and evaluation of methods for the detection and the progression of retina diseases (diabetic retinopathy and  age-related macular degeneration), as well as diseases that are not related with the eyes health, but signs of the diseases can be detected by the analysis of retina images (e.g. cardiovascular risk). Both traditional (featured based) machine learning approaches as well as deep learning methods will be explored and evaluated  with respect to accuracy, sensitivity and specificity in diagnosis and prediction.
-
-\section{IEEE Signal Processing Society SPCup2018}
-
+\subsection{IEEE Signal Processing Society SPCup2018}
+\paragraph{}
 During the fourth year of my studies I was part of a 5-members team that participated in the IEEE Signal Processing Cup 2018 (\url{https://piazza.com/ieee_sps/other/spcup2018/home}). The specific challenge focused on the topic: A forensic camera model identification challenge. The goal of this competition was to build a system capable of determining the type of camera (manufacturer and model) that captured a digital image without relying on metadata. We developed a system based on machine learning techniques that could identify the camera type with an accuracy of 71\%.
 
 \bibliography{bibliography}
