@@ -4,6 +4,10 @@
 
 \newcommand{\name}{Nikos Tsiknakis}
 
+\usepackage{ifthen}
+\newboolean{simple}
+\setboolean{simple}{false}
+
 \usepackage{geometry}
 \geometry{
   left     =  20mm,
@@ -70,6 +74,11 @@
 % ********************* %
 \input{../cv_components/experience}
 
+% *************************** %
+% *       PUBLICATIONS      * %
+% *************************** %
+\input{../cv_components/publications}
+
 % ********************* %
 % *      SEMINARS     * %
 % ********************* %
@@ -79,11 +88,6 @@
 % *       AWARDS      * %
 % ********************* %
 \input{../cv_components/awards}
-
-% *************************** %
-% *       PUBLICATIONS      * %
-% *************************** %
-\input{../cv_components/publications}
 
 % ************************ %
 % *     CERTIFICATES     * %

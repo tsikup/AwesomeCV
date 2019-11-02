@@ -12,24 +12,26 @@
   \leftside{Supervisor}
   \rightsideplain{\href{http://www.ece.upatras.gr/skodras/}{Prof. Athanassios Skodras} \vspace{6pt}}
 
-  \leftside{Thesis Details}
-  \rightsideplain{This thesis was conducted in collaboration with the Vrije Universiteit Brussel (VUB) and the Royal Meteorological Institute of Brussels (KMI). \vspace{4pt}}
+  \ifthenelse{\boolean{simple}}{}{
+    \leftside{Thesis Details}
+    \rightsideplain{This thesis was conducted in collaboration with the Vrije Universiteit Brussel (VUB) and the Royal Meteorological Institute of Brussels (KMI). \vspace{4pt}}
 
-  \leftside{}
-  \rightsideplain{Its central objective was the application of advanced stereo vision techniques for the estimation of cloud height based on images from the MSG-3 and MSG-1 satellites. \vspace{4pt}}
+    \leftside{}
+    \rightsideplain{Its central objective was the application of advanced stereo vision techniques for the estimation of cloud height based on images from the MSG-3 and MSG-1 satellites. \vspace{4pt}}
 
-  \leftside{}
-  \rightsideplain{
-    In the context of the thesis I have specifically focused on the following:
-    \begin{enumerate}
-      \item Extensive review of prior work regarding image registration methods.
-      \item Implementation of several state-of-the-art image registration methods. Specifically, I have compared two major algorithmic family of methods, i.e.
+    \leftside{}
+    \rightsideplain{
+      In the context of the thesis I have specifically focused on the following:
       \begin{enumerate}
-          \item One operating on the pixel domain, which is based on the maximization of the Mutual Information of the image pair and
-          \item One operating on the low-level features of the images. In this approach, the features were extracted using the SIFT and SURF algorithms. The transformation model for registering the images was estimated using these features and the RANSAC algorithm.
+        \item Extensive review of prior work regarding image registration methods.
+        \item Implementation of several state-of-the-art image registration methods. Specifically, I have compared two major algorithmic family of methods, i.e.
+        \begin{enumerate}
+            \item One operating on the pixel domain, which is based on the maximization of the Mutual Information of the image pair and
+            \item One operating on the low-level features of the images. In this approach, the features were extracted using the SIFT and SURF algorithms. The transformation model for registering the images was estimated using these features and the RANSAC algorithm.
+        \end{enumerate}
+        \item  Review and application of Graph Cut algorithms based on the Markov Random Fields theory to extract the disparity map.
       \end{enumerate}
-      \item  Review and application of Graph Cut algorithms based on the Markov Random Fields theory to extract the disparity map.
-    \end{enumerate}
+    }
   }
 
   \leftside{\bf 2010 - 2014}
