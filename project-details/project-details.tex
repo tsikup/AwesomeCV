@@ -1,0 +1,54 @@
+% !TeX program = lualatex
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{geometry}
+\geometry{
+  left     =  35mm,
+  right    =  35mm,
+  bottom   =  20mm,
+  top      =  20mm
+}
+
+\begin{document}
+
+\title{Project Details}
+\author{Nikos Tsiknakis}
+
+\maketitle
+
+\section{ECE Thesis}
+This thesis was conducted in the Digital Signal and Image Processing Laboratory of the Electrical and Computer Engineering Department, University of Patras under the supervision of Prof. Athanassios Skodras in collaboration with the Vrije Universiteit Brussel (VUB) and the Royal Meteorological Institute of Brussels (KMI). \vspace{4pt}
+
+Its central objective was the application of advanced stereo vision techniques for the estimation of cloud height based on images from the MSG-3 and MSG-1 satellites. \vspace{4pt}
+
+In the context of the thesis I have specifically focused on the following:
+\begin{enumerate}
+    \item Extensive review of prior work regarding image registration methods.
+    \item Implementation of several state-of-the-art image registration methods. Specifically, I have compared two major algorithmic family of methods, i.e.
+    \begin{enumerate}
+        \item One operating on the pixel domain, which is based on the maximization of the Mutual Information of the image pair and
+        \item One operating on the low-level features of the images. In this approach, the features were extracted using the SIFT and SURF algorithms. The transformation model for registering the images was estimated using these features and the RANSAC algorithm.
+    \end{enumerate}
+    \item  Review and application of Graph Cut algorithms based on the Markov Random Fields theory to extract the disparity map.
+\end{enumerate}
+
+\section{H2020 funded project InSilc}
+
+During the months that I have been working in CBML, ICS FORTH I have been involved in the H2020 InSilc project (\url{https://insilc.eu/}) in which my main responsibilities relate to the implement and testing of a number of algorithmic approaches for the registration of IVUS images before and after stent procedure.
+
+IVUS image sequences suffer from various artifacts that are caused by the cardiac pulse, which can complicate their analysis. One major artifact is that he longitudinal movement of the transducer is affected by an oscillatory movement due to the heart beats \cite{alberti2012automatic}. Moreover, because the catheter is withdrawn through the blood vessel, its position with respect to the vessel is not fixed but freely to move inside it. As a result, the acquired image sections might not be orthogonal to the vessel walls \cite{gatta2008robust} as well as subsequent frames might be misaligned \cite{alberti2012automatic}. To address these problems, we apply a gating technique in order to sample the frames which correspond to the end-diastolic phase of the heart cycle, then we apply a DTW based method in order to temporally align the each IVUS pair sequences. Finally, we apply rigid registration between each image pair of the temporally registered sequences.
+
+
+\section{H2020 funded project SeeFar}
+
+In the upcoming months I will also be working on the SeeFar project (\url{https://www.see-far.eu/}) on the development and evaluation of methods for the detection and the progression of retina diseases (diabetic retinopathy and  age-related macular degeneration), as well as diseases that are not related with the eyes health, but signs of the diseases can be detected by the analysis of retina images (e.g. cardiovascular risk). Both traditional (featured based) machine learning approaches as well as deep learning methods will be explored and evaluated  with respect to accuracy, sensitivity and specificity in diagnosis and prediction.
+
+
+
+\bibliography{bibliography}
+\bibliographystyle{unsrt}
+
+\end{document}
