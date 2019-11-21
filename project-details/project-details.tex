@@ -23,7 +23,7 @@
 
 \subsection{3D Medical Image Registration}
 \paragraph{}
-During my internship (summer 2018) as well as the past few months that I have been working in CBML, ICS FORTH I am involved in the H2020 InSilc project (\url{https://insilc.eu/}), in which my main responsibilities relate to the implementation and testing of a number of algorithmic approaches for the registration of IVUS image sequences before and after stent procedure.
+During my internship (summer 2018) as well as the past few months that I have been working in CBML, ICS FORTH I am involved in the H2020 InSilc project (\url{https://insilc.eu/}), in which my main responsibilities relate to the design and implementation of algorithmic approaches for the registration of IVUS image sequences before and after stent procedure.
 
 IVUS image sequences suffer from various artifacts that are caused by the cardiac pulse, which can complicate their analysis. One major artifact is that the longitudinal movement of the transducer is affected by an oscillatory movement due to the heart beats \cite{alberti2012automatic}. Moreover, because the catheter is withdrawn through the blood vessel, its position with respect to the vessel is not fixed but freely to move inside it. As a result, the acquired image sections might not be orthogonal to the vessel walls \cite{gatta2008robust} as well as subsequent frames might be misaligned \cite{alberti2012automatic}. To address these problems, a gating technique is applied in order to sample the frames which correspond to the end-diastolic phase of the heart cycle. Then we apply a DTW based method in order to temporally align the IVUS image sequences. Finally, we apply rigid registration between each image pair of the temporally registered sequences.
 
