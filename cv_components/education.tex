@@ -12,7 +12,12 @@
   \leftside{Supervisor}
   \rightsideplain{\href{http://www.ece.upatras.gr/skodras/}{Prof. Athanassios Skodras} \vspace{6pt}}
 
-  \ifthenelse{\boolean{simple}}{}{
+  \ifthenelse{\boolean{simple}}
+  {
+    \leftside{}
+    \rightsideplain{}
+  }
+  {
     \leftside{Thesis Details}
     \rightsideplain{This thesis was conducted in collaboration with the Vrije Universiteit Brussel (VUB) and the Royal Meteorological Institute of Brussels (KMI). \vspace{4pt}}
 
