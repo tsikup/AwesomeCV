@@ -1,4 +1,4 @@
-% !TeX program = lualatex
+% !TeX program = lualatex+biber
 
 \documentclass{../awesomecv}
 
@@ -7,33 +7,6 @@
 \usepackage{ifthen}
 \newboolean{simple}
 \setboolean{simple}{false}
-
-\usepackage{geometry}
-\geometry{
-  left     =  20mm,
-  right    =  20mm,
-  bottom   =  23mm,
-  top      =  10mm,
-  footskip =  10mm
-}
-
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\lfoot{{\footnotesize\color{\secondfont}\today}}
-\cfoot{{\footnotesize\color{\secondfont}\name}}
-\rfoot{{\footnotesize\color{\secondfont}\thepage}}
-
-\documentcolor{blue}
-\secondcolor{base01}
-\thirdcolor{base01}
-\sectioncolor{base02}
-
-\titlethicknessleft{3mm}
-
-\voiceleftsize{2.1cm}
-\voicerightsize{12cm}
 
 \begin{document}
 

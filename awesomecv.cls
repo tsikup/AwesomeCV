@@ -42,6 +42,8 @@
 \definecolor{blue}{HTML}{268BD2}
 \definecolor{cyan}{HTML}{2AA198}
 \definecolor{green}{HTML}{859900}
+\definecolor{darkblue}{HTML}{000080}
+\definecolor{sectiondark}{HTML}{020202}
 \setlength{\footskip}{70pt}
 
 % \setmainfont{Roboto-Light}
@@ -68,14 +70,17 @@
   boxrule=1pt,
   arc=2pt,
   boxsep=0pt,
+  leftright skip=1.5cm,
   right=5cm,
   top=.3cm,
   bottom=.3cm,
   tcbox raise base,
   sidebyside,
+  righthand width=6cm,
   lower separated=false,
   leftrule=\titleboxleft,
-  rightupper=-1cm
+  rightupper=-1cm,
+  % width=0.9\linewidth
 }
 
 \newcommand{\documentcolor}[1]{
@@ -94,6 +99,14 @@
   \newcommand{\sectionfont}{#1}
 }
 
+\newcommand{\sectionbegcolor}[1]{
+  \newcommand{\sectionbegfont}{#1}
+}
+
+\newcommand{\sectionendcolor}[1]{
+  \newcommand{\sectionendfont}{#1}
+}
+
 \newcommand{\titlethicknessleft}[1]{
   \newcommand{\titleboxleft}{#1}
 }
@@ -107,8 +120,9 @@
 }
 
 \newcommand{\authorname}[2]{
-  \huge\color{\maincolor}#1\\
-  \phantom{~~~}\\
+  \huge\color{\maincolor}#1
+  \phantom{~~~}
+
   \normalsize\phantom{~~~}#2\normalsize\\
 }
 
@@ -165,16 +179,19 @@
 }
 
 \newcommand{\updated}[1]{
-  \begin{flushright}
+  % \begin{flushright}
+    \hspace*{14cm}
     \ifthenelse{\isempty{#1}}
                {\footnotesize\color{\secondfont}last update: \today}
                {\footnotesize\color{\secondfont}last update: #1}
-  \end{flushright}
+  % \end{flushright}
 }
 
 \newcommand{\opensection}[2]{
-  \Large\color{\sectionfont}#1~~#2\normalsize\color{black}
-  \vspace{-.2cm}
+  \textbf{\Large\color{\sectionendfont}#1~~\color{\sectionbegfont}\StrMid{#2}{1}{3}\color{\sectionendfont}\StrMid{#2}{4}{100}\normalsize}\color{black}
+  \hspace{3pt}
+  {\color{\sectionendfont}\leavevmode\leaders\hrule height 1pt\hfill\kern\z@}
+  % \vspace{-.2cm}
 }
 
 \newcommand{\subdescription}[3]{
@@ -183,7 +200,7 @@
 
 \newenvironment{describesection}
                {\begin{longtable}{>{\raggedleft}p{\leftMargin}p{\rightMargin}}}
-               {\end{longtable}}
+               {\end{longtable}}  
 
 \newcommand{\leftside}[1] {
   \footnotesize\color{black}#1\normalsize &
@@ -232,3 +249,62 @@
 
 \renewcommand*{\labelitemiii}
 {\strut\textcolor{\maincolor}{\normalsize -}}
+
+% CUSTOM PACKAGES AND SETTINGS
+\usepackage{xstring}
+
+%%%%%%%%%%%%
+% BIBLATEX %
+%%%%%%%%%%%%
+\usepackage[style=ieee,maxbibnames=10]{biblatex}
+\addbibresource{../publications/publications.bib}
+
+%% emphasize author name when rendering bibliography
+% Note: requires: \usepackagage{biblatex}
+\newcommand{\emphasizeAuthorName}[1]{%
+  \DeclareNameFormat{author}{%
+    \ifthenelse{\value{listcount}=1}
+    {%
+      {\expandafter\ifstrequal\expandafter{\namepartfamily}{#1}{\mkbibbold{\namepartgiveni \namepartfamily}}{\namepartgiveni\addspace \namepartfamily}}
+      %
+    }{\ifnumless{\value{listcount}}{\value{liststop}}
+        {\expandafter\ifstrequal\expandafter{\namepartfamily}{#1}{\mkbibbold{\addcomma\addspace \namepartgiveni\addspace \namepartfamily}}{\addcomma\addspace \namepartgiveni\addspace \namepartfamily}}
+        {\expandafter\ifstrequal\expandafter{\namepartfamily}{#1}{\mkbibbold{\addcomma\addspace and \namepartgiveni\addspace \namepartfamily}}{\addcomma\addspace and \namepartgiveni\addspace \namepartfamily}}%
+      }
+    \ifthenelse{\value{listcount}<\value{liststop}}
+    {\addcomma\space}
+  }
+}
+\emphasizeAuthorName{Tsiknakis}
+
+%%%%%%%%%%%%
+% GEOMETRY %
+%%%%%%%%%%%%
+\usepackage{geometry}
+\geometry{
+  left     =  10mm,
+  right    =  10mm,
+  bottom   =  23mm,
+  top      =  10mm,
+  footskip =  10mm
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\lfoot{{\footnotesize\color{\secondfont}\today}}
+\cfoot{{\footnotesize\color{\secondfont}\name}}
+\rfoot{{\footnotesize\color{\secondfont}\thepage}}
+
+\documentcolor{sectiondark}
+\secondcolor{base01}
+\thirdcolor{base01}
+\sectioncolor{base02}
+\sectionbegcolor{red}
+\sectionendcolor{sectiondark}
+
+\titlethicknessleft{2mm}
+
+\voiceleftsize{3cm}
+\voicerightsize{12cm}

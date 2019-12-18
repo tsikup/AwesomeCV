@@ -33,3 +33,8 @@
 *.vrb
 *.xdy
 *.tdo
+*.bcf
+cv/*.bib
+cv-simple/*.bib
+*xml
+._components
