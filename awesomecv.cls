@@ -200,7 +200,7 @@
 
 \newenvironment{describesection}
                {\begin{longtable}{>{\raggedleft}p{\leftMargin}p{\rightMargin}}}
-               {\end{longtable}}  
+               {\end{longtable}}
 
 \newcommand{\leftside}[1] {
   \footnotesize\color{black}#1\normalsize &
@@ -257,7 +257,6 @@
 % BIBLATEX %
 %%%%%%%%%%%%
 \usepackage[style=ieee,maxbibnames=10]{biblatex}
-\addbibresource{../publications/publications.bib}
 
 %% emphasize author name when rendering bibliography
 % Note: requires: \usepackagage{biblatex}
@@ -272,7 +271,7 @@
         {\expandafter\ifstrequal\expandafter{\namepartfamily}{#1}{\mkbibbold{\addcomma\addspace and \namepartgiveni\addspace \namepartfamily}}{\addcomma\addspace and \namepartgiveni\addspace \namepartfamily}}%
       }
     \ifthenelse{\value{listcount}<\value{liststop}}
-    {\addcomma\space}
+    {\addcomma\space}{}
   }
 }
 \emphasizeAuthorName{Tsiknakis}
